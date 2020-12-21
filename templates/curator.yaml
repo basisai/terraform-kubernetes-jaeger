@@ -1,0 +1,15 @@
+image:
+  tag: ${image_tag}
+
+cronjob:
+  schedule: "${cron_schedule}"
+configMaps:
+  action_file_yml: |-
+    ${actions}
+  config_yml: |-
+    ---
+    client:
+      hosts:
+        - ${es_client_host}
+      port: ${es_client_port}
+      use_ssl: False

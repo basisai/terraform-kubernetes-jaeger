@@ -1,0 +1,43 @@
+provisionDataStore:
+  cassandra: false
+  elasticsearch: false
+
+tag: ${image_tag}
+
+serviceAccounts:
+  spark:
+    create: false
+
+storage:
+  type: elasticsearch
+  elasticsearch:
+    host: ${es_client_host}
+    port: ${es_client_port}
+
+agent:
+  enabled: true
+  resources: ${agent_resources}
+
+collector:
+  enabled: true
+  resources: ${collector_resources}
+
+query:
+  enabled: true
+  service:
+    annotations: {}
+    type: ClusterIP
+    # List of IP ranges that are allowed to access the load balancer (if supported)
+    loadBalancerSourceRanges: []
+    port: 80
+  ingress:
+    enabled: true
+    hosts: ${ingress_hosts}
+    annotations: ${ingress_annotations}
+  resources: ${query_resources}
+
+spark:
+  enabled: false
+
+hotrod:
+  enabled: false

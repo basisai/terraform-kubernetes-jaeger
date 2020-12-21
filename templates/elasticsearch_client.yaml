@@ -1,0 +1,32 @@
+replicas: ${es_client_replicas}
+
+esMajorVersion: ${es_major_version}
+
+clusterName: ${es_cluster_name}
+nodeGroup: client
+
+roles:
+  master: "false"
+  ingest: "false"
+  data: "false"
+
+rbac:
+  create: ${es_rbac_enable}
+
+podSecurityPolicy:
+  create: ${es_psp_enable}
+
+image: ${es_image}
+imageTag: ${es_image_tag}
+
+persistence:
+  enabled: false
+
+volumeClaimTemplate:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: ${es_client_persistence_disk_size}
+
+resources: ${es_client_resources}

@@ -1,0 +1,33 @@
+replicas: ${es_master_replicas}
+minimumMasterNodes : ${es_master_minimum_replicas}
+
+esMajorVersion: ${es_major_version}
+
+clusterName: ${es_cluster_name}
+nodeGroup: master
+
+roles:
+  master: "true"
+  ingest: "true"
+  data: "false"
+
+rbac:
+  create: ${es_rbac_enable}
+
+podSecurityPolicy:
+  create: ${es_psp_enable}
+
+image: ${es_image}
+imageTag: ${es_image_tag}
+
+persistence:
+  enabled: true
+
+volumeClaimTemplate:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: ${es_master_persistence_disk_size}
+
+resources: ${es_master_resources}
