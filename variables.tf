@@ -34,12 +34,12 @@ variable "jaeger_chart_repository_url" {
 
 variable "jaeger_chart_version" {
   description = "Chart version for Jaeger"
-  default     = "0.18.2"
+  default     = "0.39.7"
 }
 
 variable "jaeger_image_tag" {
   description = "Jaeger's docker image tag"
-  default     = "1.16.0"
+  default     = "1.20.0"
 }
 
 variable "jaeger_namespace" {
