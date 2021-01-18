@@ -18,8 +18,9 @@ agent:
 collector:
   enabled: true
   resources: ${collector_resources}
-  zipkin:
-    port: 9411
+  service:
+    zipkin:
+      port: 9411
 
 query:
   enabled: true
