@@ -47,6 +47,11 @@ variable "jaeger_namespace" {
   default     = "core"
 }
 
+variable "jaegar_ui_ingress_enabled" {
+  description = "Enable Ingress for Jaegar UI"
+  default     = true
+}
+
 variable "jaeger_ui_ingress_hosts" {
   description = "Ingress hosts for the Jaeger Query service"
   default     = {}

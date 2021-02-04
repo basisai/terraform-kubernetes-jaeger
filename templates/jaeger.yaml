@@ -31,7 +31,7 @@ query:
     loadBalancerSourceRanges: []
     port: 80
   ingress:
-    enabled: true
+    enabled: ${ingress_enabled}
     hosts: ${ingress_hosts}
     annotations: ${ingress_annotations}
   resources: ${query_resources}

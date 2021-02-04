@@ -37,6 +37,7 @@ data "template_file" "jaeger" {
     es_client_port = 9200
 
     image_tag           = var.jaeger_image_tag
+    ingress_enabled     = var.jaegar_ui_ingress_enabled
     ingress_hosts       = jsonencode(var.jaeger_ui_ingress_hosts)
     ingress_annotations = jsonencode(var.jaeger_ui_ingress_annotations)
     agent_resources     = jsonencode(var.jaeger_agent_resources)
